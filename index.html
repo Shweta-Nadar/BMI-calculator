@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="calculator-card">
+        <h1>BMI Calculator</h1>
+        <div class="input-group">
+            <label for="age">Age (years)</label>
+            <input type="number" id="age" placeholder="Enter age">
+          
+            <label for="gender">Gender</label>
+            <select id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select> <!-- ← This was missing! -->
+          
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" placeholder="Enter weight">
+          </div>
+          
+        <div class="input-group">
+          <label for="height">Height (cm)</label>
+          <input type="number" id="height" placeholder="Enter height">
+        </div>
+        <button id="calculate">Calculate BMI</button>
+        <div id="result" class="result"></div>
+        <div id="bmi-info" class="bmi-info"></div>
+        <div id="health-tips" class="health-tips">
+          <strong>Recommended Health Tips:</strong>
+          <ul id="tip-list" class="tip-list"></ul>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

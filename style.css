@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumar+One&family=Quicksand:wght@700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  /* body {
+    background-color: #bcbaec;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+  select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: white;
+    appearance: none;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: #444;
+    transform: scale(1.01);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .calculator-card {
+    width: 70vw;
+    max-width: none;
+    padding: 2rem;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3);
+}
+  
+  body {
+    /* background-image: url("purplrbg.png"); */
+    background-color: #bcbaec;
+    min-height: 100vh;
+    padding: 1rem;
+    display: block;
+  }
+  /* .calculator-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideIn 0.5s ease forwards;
+  }
+   */
+  @keyframes slideIn {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  h1 {
+    color: #3c3c79;
+    font-size: 2.9rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  .input-group {
+    border-radius: 30px;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInLeft 0.5s ease forwards;
+  }
+  
+  .input-group:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  input:focus, select:focus {
+    border: 2px solid #342462;
+    outline: none;
+    box-shadow: 0 0 5px #322558;
+    transition: 0.3s ease;
+  }
+  .input-group:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  
+  @keyframes fadeInLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #444;
+    transform: scale(1.01);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  button {
+    
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #363667;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    margin: 1rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards 0.3s;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  button:hover {
+    background-color: #4b4ba5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  .result {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  .result.show {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+  
+  .result.underweight {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  .result.normal {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .result.overweight {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  .result.obese {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .bmi-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #e8f4f8;
+    color: #2c5282;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  .bmi-info.show {
+    opacity: 1;
+    max-height: 500px;
+  }
+  
+  .health-tips {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #f0fff4;
+    color: #276749;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  .health-tips.show {
+    opacity: 1;
+    max-height: 500px;
+  }
+  
+  .tip-list {
+    list-style-position: inside;
+    margin-top: 0.5rem;
+  }
+  
+  .tip-list li {
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+  }
+  
+  .tip-list.show li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .tip-list.show li:nth-child(1) { transition-delay: 0.1s; }
+  .tip-list.show li:nth-child(2) { transition-delay: 0.2s; }
+  .tip-list.show li:nth-child(3) { transition-delay: 0.3s; }
+  .tip-list.show li:nth-child(4) { transition-delay: 0.4s; }
+  
