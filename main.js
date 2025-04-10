@@ -1,13 +1,13 @@
 function calculateBMI() {
     const weight = parseFloat(document.getElementById('weight').value);
-    const height = parseFloat(document.getElementById('height').value) / 100; // Convert cm to meters
+    const height = parseFloat(document.getElementById('height').value) / 100; 
     const resultDiv = document.getElementById('result');
     const bmiInfoDiv = document.getElementById('bmi-info');
     const healthTipsDiv = document.getElementById('health-tips');
     const tipList = document.getElementById('tip-list');
   
     if (!weight || !height || weight <= 0 || height <= 0) {
-      resultDiv.textContent = 'Please enter valid weight and height values';
+      resultDiv.innerHTML = 'Please enter valid weight and height values';
       resultDiv.className = 'result show';
       bmiInfoDiv.className = 'bmi-info';
       healthTipsDiv.className = 'health-tips';
@@ -72,14 +72,8 @@ function calculateBMI() {
     tipList.className = 'tip-list show';
   
     
-    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    resultDiv.scrollIntoView({ behavior: 'smooth' });
   }
   
   document.getElementById('calculate').addEventListener('click', calculateBMI);
   
-
-  document.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      calculateBMI();
-    }
-  });
